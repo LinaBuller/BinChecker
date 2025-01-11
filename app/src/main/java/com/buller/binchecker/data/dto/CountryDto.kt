@@ -1,6 +1,6 @@
-package com.buller.binchecker.models
+package com.buller.binchecker.data.dto
 
-data class Country(
+data class CountryDto(
     val alpha2: String?,
     val currency: String?,
     val emoji: String?,

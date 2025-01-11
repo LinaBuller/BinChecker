@@ -1,0 +1,14 @@
+package com.buller.binchecker.ui.screens
+
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+
+@Composable
+fun HistoryRoute() {
+    Text(text = "HISTORY SCREEN")
+}
+
+@Composable
+fun HistoryScreen() {
+
+}

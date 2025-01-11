@@ -1,6 +1,6 @@
-package com.buller.binchecker.models
+package com.buller.binchecker.data.dto
 
-data class Bank(
+data class BankDto(
     val city: String?,
     val name: String?,
     val phone: String?,
