@@ -1,10 +1,11 @@
 package com.buller.binchecker.data.di
 
-import com.buller.binchecker.data.repositories.BinRepositoryImpl
-import com.buller.binchecker.ui.MainViewModel
+import com.buller.binchecker.ui.screens.history.HistoryViewModel
+import com.buller.binchecker.ui.screens.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
-    viewModel { MainViewModel(getBinInfoUseCase = get()) }
+    viewModel { HomeViewModel(getBinInfoUseCase = get(), setBinInfoToDatabaseUseCase = get()) }
+    viewModel { HistoryViewModel(getAllBinInfoUseCase = get()) }
 }

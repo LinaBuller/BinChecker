@@ -1,6 +1,6 @@
 package com.buller.binchecker.data.di
 
-import com.buller.binchecker.retrofit.BinListApi
+import com.buller.binchecker.domain.retrofit.BinListApi
 import okhttp3.OkHttpClient
 import org.koin.dsl.module
 import retrofit2.Retrofit

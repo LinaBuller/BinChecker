@@ -9,54 +9,53 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b881525a-0c08-4052-ac8c-4b9c2fc1bd18" name="Changes" comment="added models and libraries">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/AppModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/DataModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/DomainModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/RemouteModule.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/BankDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/BinInfoDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/CountryDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/NumberDto.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/mappers/BinInfoMappers.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/repositories/BinRepositoryImpl.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/Result.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/repositories/BinRepository.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/usecases/GetBinInfoUseCase.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/App.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/MainViewModel.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/BottomNavBar.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/HistoryScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/HomeScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/MainScreen.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/states/BinInfoState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/dependencies-accessors/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/dependencies-accessors/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.3-rc-2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.3-rc-2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+    <list default="true" id="b881525a-0c08-4052-ac8c-4b9c2fc1bd18" name="Changes" comment="added network requests, di, clean architecture and home screen">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/LocalDataSource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/LocalDatabase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/LocalDatabaseConstants.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/RoomDataSource.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/dao/BinInfoDao.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/entities/BankEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/entities/BinInfoEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/entities/CountryEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/entities/NumberEntity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/local/mappers/BinInfoLocalMappers.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/repositories/LocalRepositoryImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/repositories/LocalRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/usecases/GetAllBinInfoUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/usecases/SetBinInfoToDatabaseUseCase.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/history/HistoryViewModel.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/history/states/HistoryState.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Bank.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Bank.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/BinInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/BinInfo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Country.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Country.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Number.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Number.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/retrofit/BinListApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/retrofit/BinListApi.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/retrofit/RetrofitInstance.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/AppModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/AppModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/DataModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/DataModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/DomainModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/DomainModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/RemouteModule.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/di/RemouteModule.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/BankDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/remote/dto/BankDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/BinInfoDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/remote/dto/BinInfoDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/CountryDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/remote/dto/CountryDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/dto/NumberDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/remote/dto/NumberDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/mappers/BinInfoMappers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/remote/mappers/BinInfoRemoteMappers.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/repositories/BinRepositoryImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/data/repositories/BinInfoRepositoryImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/Result.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/utils/Result.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/repositories/BinRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/repositories/BinInfoRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/usecases/GetBinInfoUseCase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/usecases/GetBinInfoUseCase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Bank.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/models/Bank.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/BinInfo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/models/BinInfo.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Country.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/models/Country.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/models/Number.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/models/Number.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/retrofit/BinListApi.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/domain/retrofit/BinListApi.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/MainViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/home/HomeViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/HistoryScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/history/HistoryScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/HomeScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/home/HomeScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/MainScreen.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/MainScreen.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/states/BinInfoState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/buller/binchecker/ui/screens/home/states/BinInfoState.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R5CW22D69NX]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\GalinaBuller\.android\avd\Pixel_7_Pro_API_33.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -76,8 +75,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Object" />
-        <option value="Kotlin Interface" />
         <option value="Kotlin File" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -88,7 +87,6 @@
   <component name="KotlinScriptingSettings">
     <scriptDefinition className="org.jetbrains.kotlin.scripting.resolve.KotlinScriptDefinitionFromAnnotatedTemplate" definitionName="KotlinBuildScript">
       <order>2147483647</order>
-      <autoReloadConfigurations>true</autoReloadConfigurations>
     </scriptDefinition>
   </component>
   <component name="ProjectColorInfo">{
@@ -102,6 +100,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "PROJECT_TRUSTED_KEY": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
@@ -114,7 +113,16 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\User\Desktop\BinChecker\app\src\main\java\com\buller\binchecker\domain\utils" />
+      <recent name="D:\User\Desktop\BinChecker\app\src\main\java\com\buller\binchecker\ui\screens\history" />
+      <recent name="D:\User\Desktop\BinChecker\app\src\main\java\com\buller\binchecker\ui\screens\home" />
+      <recent name="D:\User\Desktop\BinChecker\app\src\main\java\com\buller\binchecker\data\remoute\" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.buller.binchecker.data.local" />
+      <recent name="com.buller.binchecker.ui.screens.home" />
+      <recent name="com.buller.binchecker.data.local.daos" />
       <recent name="com.buller.binchecker.ui" />
       <recent name="com.buller.binchecker.retrofit" />
     </key>
@@ -250,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736434884923</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="added network requests, di, clean architecture and home screen">
+      <option name="closed" value="true" />
+      <created>1736621880557</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736621880557</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,6 +286,7 @@
     </ignored-roots>
     <MESSAGE value="initial commit" />
     <MESSAGE value="added models and libraries" />
-    <option name="LAST_COMMIT_MESSAGE" value="added models and libraries" />
+    <MESSAGE value="added network requests, di, clean architecture and home screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="added network requests, di, clean architecture and home screen" />
   </component>
 </project>

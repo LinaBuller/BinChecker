@@ -10,12 +10,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.buller.binchecker.ui.MainViewModel
+import com.buller.binchecker.ui.screens.history.HistoryRoute
+import com.buller.binchecker.ui.screens.home.HomeRoute
 
 @Composable
 fun MainScreen() {
@@ -56,7 +56,7 @@ fun NavHostContainer(modifier: Modifier = Modifier, navController: NavHostContro
             HomeRoute(modifier = modifier)
         }
         composable(BottomNavItem.HistoryItem.route) {
-            HistoryRoute()
+            HistoryRoute(modifier = modifier)
         }
     }
 }
