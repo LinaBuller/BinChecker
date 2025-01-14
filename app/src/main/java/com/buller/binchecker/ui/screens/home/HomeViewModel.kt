@@ -3,6 +3,7 @@ package com.buller.binchecker.ui.screens.home
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.buller.binchecker.domain.models.BinInfo
 import com.buller.binchecker.domain.utils.Result
 import com.buller.binchecker.domain.usecases.GetBinInfoUseCase
 import com.buller.binchecker.domain.usecases.SetBinInfoToDatabaseUseCase
@@ -20,24 +21,21 @@ class HomeViewModel(
 ) : ViewModel() {
     private val _infoState = MutableStateFlow(BinInfoState())
     val infoState = _infoState.map(BinInfoState::toUiState).stateIn(
-        viewModelScope,
-        SharingStarted.Eagerly, _infoState.value.toUiState()
+        viewModelScope, SharingStarted.Eagerly, _infoState.value.toUiState()
     )
 
     fun setBin(number: String) {
         _infoState.value = _infoState.value.copy(binNumber = number)
-        Log.d("MyLog", _infoState.value.binNumber)
     }
 
     fun getInfo() {
         viewModelScope.launch {
-            Log.d("MyLog", _infoState.value.binNumber)
             val result = getBinInfoUseCase.invoke(_infoState.value.binNumber)
             result.collect { res ->
                 _infoState.update {
                     when (res) {
                         is Result.Success -> {
-                            setBinInfoToDatabaseUseCase.invoke(res.data)
+                            saveToHistory(_infoState.value.binNumber,res.data)
                             it.copy(info = res.data, isLoading = false)
                         }
 
@@ -48,10 +46,20 @@ class HomeViewModel(
                         is Result.Loading -> {
                             it.copy(info = null, isLoading = true, error = null)
                         }
+
+                        else -> {
+                            it.copy(info = null, isLoading = false, error = null)
+                        }
                     }
                 }
             }
         }
     }
 
+    private suspend fun saveToHistory(bin: String, binInfo: BinInfo) {
+        Log.d("MyLog", "set item to database")
+        setBinInfoToDatabaseUseCase.invoke(
+            bin, binInfo
+        )
+    }
 }

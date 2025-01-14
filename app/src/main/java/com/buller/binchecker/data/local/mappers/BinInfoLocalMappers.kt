@@ -15,30 +15,31 @@ import kotlinx.coroutines.withContext
 
 
 suspend fun BinInfo.insert(
-    binInfoDao: BinInfoDao
+    bin: String, binInfoDao: BinInfoDao
 ): Long {
     return withContext(Dispatchers.IO) {
-        insertInternal(binInfoDao)
+        insertInternal(bin, binInfoDao)
     }
 }
 
 @Transaction
 private suspend fun BinInfo.insertInternal(
-    binInfoDao: BinInfoDao
+    bin: String, binInfoDao: BinInfoDao
 ): Long {
-    val binInfoEntity = this.toBinInfoEntity()
+    val binInfoEntity = this.toBinInfoEntity(bin)
     return binInfoDao.insert(binInfoEntity)
 }
 
 
-fun BinInfo.toBinInfoEntity(): BinInfoEntity = BinInfoEntity(
+fun BinInfo.toBinInfoEntity(bin: String): BinInfoEntity = BinInfoEntity(
     bank = this.bank?.toBankEntity(),
     brand = this.brand,
     country = this.country?.toCountEntity(),
     number = this.number?.toNumberEntity(),
     prepaid = this.prepaid,
     scheme = this.scheme,
-    type = this.type
+    type = this.type,
+    bin = bin
 )
 
 fun Bank.toBankEntity(): BankEntity =
@@ -65,14 +66,15 @@ fun BinInfoEntity.toBinInfo(): BinInfo = BinInfo(
     number = this.number?.toNumber(),
     prepaid = this.prepaid,
     scheme = this.scheme,
-    type = this.type
+    type = this.type,
+    bin = this.bin
 )
 
 fun BankEntity.toBank(): Bank = Bank(
     name = this.bankName ?: "",
     url = this.url ?: "",
     phone = this.phone ?: "",
-    city = this.city?: ""
+    city = this.city ?: ""
 )
 
 fun CountryEntity.toCountry(): Country = Country(

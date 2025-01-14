@@ -1,6 +1,6 @@
 package com.buller.binchecker.data.di
 
-import com.buller.binchecker.domain.usecases.GetAllBinInfoUseCase
+import com.buller.binchecker.domain.usecases.GetAllBinInfoFromDatabaseUseCase
 import com.buller.binchecker.domain.usecases.GetBinInfoUseCase
 import com.buller.binchecker.domain.usecases.SetBinInfoToDatabaseUseCase
 import org.koin.dsl.module
@@ -11,7 +11,7 @@ val domainModule = module {
     }
 
     single {
-        GetAllBinInfoUseCase(repository = get())
+        GetAllBinInfoFromDatabaseUseCase(repository = get())
     }
 
     single {

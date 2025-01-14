@@ -17,7 +17,7 @@ sealed interface InfoState {
 
     data class HasInfo(
         override val binNumber: String = "",
-        val info: BinInfo? = null,
+        val info: BinInfo,
         override val isLoading: Boolean,
         override val error: Throwable?
     ) : InfoState

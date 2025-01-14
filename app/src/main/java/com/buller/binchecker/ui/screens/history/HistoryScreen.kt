@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -30,8 +31,10 @@ import org.koin.androidx.compose.koinViewModel
 fun HistoryRoute(modifier: Modifier = Modifier) {
     val viewModel: HistoryViewModel = koinViewModel()
     val state by viewModel.historyState.collectAsStateWithLifecycle()
+    LaunchedEffect(Unit) {
+        viewModel.getAllBinInfo()
+    }
     HistoryScreen(state = state, modifier = modifier)
-
 }
 
 @Composable
@@ -50,7 +53,20 @@ fun BinInfoListItem(binInfo: BinInfo) {
             .fillMaxWidth()
             .padding(8.dp)
     ) {
-        BinInfoDisplay(modifier = Modifier.padding(8.dp), binInfo = binInfo)
+        Column() {
+            Text(
+                modifier = Modifier.padding(8.dp),
+                text = binInfo.bin.toString()
+            )
+            if (!binInfo.scheme.isNullOrBlank() || !binInfo.type.isNullOrBlank()) {
+                BinInfoDisplay(modifier = Modifier.padding(8.dp), binInfo = binInfo)
+            } else {
+                Text(
+                    modifier = Modifier.padding(8.dp),
+                    text = stringResource(R.string.not_found_bin)
+                )
+            }
+        }
     }
 }
 
@@ -58,8 +74,8 @@ fun BinInfoListItem(binInfo: BinInfo) {
 @Composable
 fun BinInfoListItemPreview() {
     val binInfo = BinInfo(
-        bank =
-        Bank(
+        bin = "34523453",
+        bank = Bank(
             city = "Rostov-on-Don", name = "VTB", phone = "+340293842", url = "https://vtb.ru"
         ),
         brand = "visa",
@@ -77,5 +93,8 @@ fun BinInfoListItemPreview() {
         type = "Debit",
         scheme = "Visa"
     )
-    BinInfoListItem(binInfo = binInfo)
+    Column {
+        Text(modifier = Modifier.padding(8.dp), text = binInfo.bin.toString())
+        BinInfoDisplay(modifier = Modifier.padding(8.dp), binInfo = binInfo)
+    }
 }

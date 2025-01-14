@@ -6,8 +6,8 @@ import com.buller.binchecker.domain.models.BinInfo
 
 class LocalRepositoryImpl(private val source: LocalDataSource) : LocalRepository {
 
-    override suspend fun setBinInfo(binInfo: BinInfo) {
-        source.set(binInfo)
+    override suspend fun setBinInfo(bin: String, binInfo: BinInfo) {
+        source.set(bin,binInfo)
     }
 
     override suspend fun getAllBinInfo(): List<BinInfo> {

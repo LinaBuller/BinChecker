@@ -11,10 +11,14 @@ import com.buller.binchecker.data.local.LocalDatabaseConstants
 )
 data class BinInfoEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    @Embedded val bank: BankEntity?,
+    val bin: String,
+    @Embedded
+    val bank: BankEntity?,
     val brand: String?,
-    @Embedded val country: CountryEntity?,
-    @Embedded val number: NumberEntity?,
+    @Embedded
+    val country: CountryEntity?,
+    @Embedded
+    val number: NumberEntity?,
     val prepaid: Boolean?,
     val scheme: String?,
     val type: String?,

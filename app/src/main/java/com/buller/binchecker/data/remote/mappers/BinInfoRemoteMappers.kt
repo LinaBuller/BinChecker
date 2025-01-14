@@ -40,37 +40,3 @@ fun CountryDto.toCountryDataMap(): Country {
 fun NumberDto.toNumberDataMap(): Number {
     return Number(length = length, luhn = luhn)
 }
-
-fun BinInfo.toBinInfoDtoDataMap(): BinInfoDto {
-    return BinInfoDto(
-        type = type,
-        prepaid = prepaid,
-        number = number?.toNumberDtoDataMap(),
-        country = country?.toCountryDtoDataMap(),
-        brand = brand,
-        scheme = scheme,
-        bank = bank?.toBankDtoDataMap()
-    )
-}
-
-fun Bank.toBankDtoDataMap(): BankDto {
-    return BankDto(city = city, url = url, name = name, phone = phone)
-}
-
-fun Country.toCountryDtoDataMap(): CountryDto {
-    return CountryDto(
-        alpha2 = alpha2,
-        currency = currency,
-        emoji = emoji,
-        longitude = longitude,
-        latitude = latitude,
-        name = name,
-        numeric = numeric
-    )
-}
-
-fun Number.toNumberDtoDataMap(): NumberDto {
-    return NumberDto(length = length, luhn = luhn)
-}
-
-
